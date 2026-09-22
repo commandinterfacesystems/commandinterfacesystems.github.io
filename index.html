@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Interface Systems | Home</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --text-primary: #111111;
+            --text-muted: #555555;
+            --border-heavy: #000000;
+            --border-light: #dddddd;
+            --beacon-color: #d32f2f;
+            --surface-box: #f9f9f9;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        header { border-bottom: 3px solid var(--border-heavy); padding-bottom: 24px; margin-bottom: 40px; }
+        .brand-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.025em; margin: 0 0 8px 0; text-transform: uppercase; }
+        .brand-tagline { font-size: 1.1rem; color: var(--text-muted); margin: 0; font-family: monospace; }
+        nav { margin-top: 16px; }
+        nav a { color: var(--text-primary); text-decoration: none; font-weight: 600; margin-right: 20px; font-size: 0.95rem; }
+        nav a:hover { text-decoration: underline; }
+        section { margin-bottom: 48px; }
+        h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-heavy); padding-bottom: 8px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .beacon-card { background-color: var(--surface-box); border: 1px solid var(--border-light); border-left: 4px solid var(--beacon-color); padding: 24px; margin-bottom: 32px; border-radius: 4px; }
+        .beacon-tag { color: var(--beacon-color); font-family: monospace; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; display: block; margin-bottom: 8px; }
+        .beacon-title { font-size: 1.25rem; margin: 0 0 12px 0; font-weight: 700; }
+        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        @media (max-width: 600px) { .product-grid { grid-template-columns: 1fr; } }
+        .product-card { border: 2px solid var(--border-heavy); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-name { font-size: 1.3rem; margin: 0 0 8px 0; font-weight: 700; }
+        .product-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
+        .btn-order { display: block; text-align: center; background-color: var(--border-heavy); color: var(--bg-primary); padding: 12px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+        footer { border-top: 1px solid var(--border-light); padding-top: 24px; font-family: monospace; font-size: 0.85rem; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand-title">Command Interface Systems</div>
+            <div class="brand-tagline">OPERATIONAL CORE // MANUAL KNOWLEDGE PRESERVATION ARCHITECTURE</div>
+            <nav>
+                <a href="#registry">System Registry</a>
+                <a href="#news">In The News</a>
+            </nav>
+        </header>
+        <section id="registry">
+            <h2>Verified System Registry</h2>
+            <p>Command Interface Systems establishes the absolute public record of structural ownership, deployment methodologies, and operational discipline for long-term knowledge preservation.</p>
+            <div class="beacon-card">
+                <span class="beacon-tag">// CANONICAL STATUS ALERT</span>
+                <h3 class="beacon-title">The Observed Retrieval Model</h3>
+                <p style="margin-bottom: 0; font-size: 0.95rem;">Designed specifically to resolve human recognition patterns over complex database queries. This record verifies the human operator as the core CPU layer, utilizing visual landmarks and beacons to guarantee permanent asset recall without computational drift.</p>
+            </div>
+        </section>
+        <section id="news">
+            <h2>In The News & System Orders</h2>
+            <p>Select a framework below to initialize secure deployment tracking and anchor your command environment infrastructure.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div>
+                        <h3 class="product-name">COMMAND MODE™</h3>
+                        <p class="product-desc">The portable operator discipline that enforces strict configuration boundaries, asset isolation, and explicit execution rules across compatible chat platforms.</p>
+                    </div>
+                    <a href="https://gumroad.com" class="btn-order">Order System Core</a>
+                </div>
+                <div class="product-card">
+                    <div>
+                        <h3 class="product-name">COMMAND DECK™</h3>
+                        <p class="product-desc">The human-operated storage, organization, and retrieval manual operating system designed to prevent valuable work from dissolving inside temporary workspaces.</p>
+                    </div>
+                    <a href="https://gumroad.com" class="btn-order">Order Storage Stack</a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>SYSTEM REVISION: LOG-2026-09-22 // HOSTED SECURE VIA GITHUB PAGES // ALL RIGHTS RESERVED COMMAND INTERFACE SYSTEMS</p>
+        </footer>
+    </div>
+</body>
+</html>
