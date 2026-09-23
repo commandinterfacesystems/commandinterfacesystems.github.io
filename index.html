@@ -3,87 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Command Interface Systems | Home</title>
+    <title>Command Interface Systems | Enterprise Governance Hub</title>
     <style>
         :root {
-            --bg-primary: #ffffff;
-            --text-primary: #111111;
-            --text-muted: #555555;
-            --border-heavy: #000000;
-            --border-light: #dddddd;
-            --beacon-color: #d32f2f;
-            --surface-box: #f9f9f9;
+            --bg-deep: #0b0f19;
+            --bg-surface: #131a26;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-heavy: #374151;
+            --accent-glow: #38bdf8;
+            --beacon-alert: #ef4444;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        header { border-bottom: 3px solid var(--border-heavy); padding-bottom: 24px; margin-bottom: 40px; }
-        .brand-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.025em; margin: 0 0 8px 0; text-transform: uppercase; }
-        .brand-tagline { font-size: 1.1rem; color: var(--text-muted); margin: 0; font-family: monospace; }
-        nav { margin-top: 16px; }
-        nav a { color: var(--text-primary); text-decoration: none; font-weight: 600; margin-right: 20px; font-size: 0.95rem; }
-        nav a:hover { text-decoration: underline; }
-        section { margin-bottom: 48px; }
-        h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-heavy); padding-bottom: 8px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
-        .beacon-card { background-color: var(--surface-box); border: 1px solid var(--border-light); border-left: 4px solid var(--beacon-color); padding: 24px; margin-bottom: 32px; border-radius: 4px; }
-        .beacon-tag { color: var(--beacon-color); font-family: monospace; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; display: block; margin-bottom: 8px; }
-        .beacon-title { font-size: 1.25rem; margin: 0 0 12px 0; font-weight: 700; }
-        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        @media (max-width: 600px) { .product-grid { grid-template-columns: 1fr; } }
-        .product-card { border: 2px solid var(--border-heavy); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-name { font-size: 1.3rem; margin: 0 0 8px 0; font-weight: 700; }
-        .product-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
-        .btn-order { display: block; text-align: center; background-color: var(--border-heavy); color: var(--bg-primary); padding: 12px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
-        footer { border-top: 1px solid var(--border-light); padding-top: 24px; font-family: monospace; font-size: 0.85rem; color: var(--text-muted); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 24px; }
+        header { border-bottom: 1px solid var(--border-heavy); padding-bottom: 32px; margin-bottom: 48px; }
+        .meta-tag { font-family: monospace; font-size: 0.75rem; color: var(--accent-glow); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; display: block; }
+        .brand-title { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 12px 0; color: #ffffff; }
+        .brand-tagline { font-size: 1.1rem; color: var(--text-muted); margin: 0 0 24px 0; max-width: 600px; }
+        nav { display: flex; gap: 24px; }
+        nav a { color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 600; font-family: monospace; text-transform: uppercase; letter-spacing: 0.05em; }
+        nav a:hover { color: var(--accent-glow); }
+        section { margin-bottom: 56px; }
+        h2 { font-size: 1.25rem; font-family: monospace; text-transform: uppercase; letter-spacing: 0.1em; color: #ffffff; margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
+        h2::before { content: "▪"; color: var(--accent-glow); }
+        p { color: var(--text-muted); font-size: 1.05rem; margin-top: 0; margin-bottom: 24px; }
+        .beacon-card { background-color: var(--bg-surface); border: 1px solid var(--border-heavy); border-left: 4px solid var(--beacon-alert); padding: 32px; border-radius: 6px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+        .beacon-tag { color: var(--beacon-alert); font-family: monospace; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 12px; }
+        .beacon-title { font-size: 1.4rem; margin: 0 0 12px 0; color: #ffffff; font-weight: 700; }
+        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        @media (max-width: 680px) { .product-grid { grid-template-columns: 1fr; } }
+        .product-card { background-color: var(--bg-surface); border: 1px solid var(--border-heavy); border-radius: 6px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease; }
+        .product-card:hover { transform: translateY(-2px); border-color: var(--accent-glow); }
+        .product-name { font-size: 1.4rem; margin: 0 0 12px 0; color: #ffffff; font-weight: 700; letter-spacing: -0.01em; }
+        .product-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 32px; flex-grow: 1; line-height: 1.5; }
+        .btn-order { display: block; text-align: center; background-color: #ffffff; color: var(--bg-deep); padding: 14px; border-radius: 4px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; font-family: monospace; transition: background-color 0.2s ease; }
+        .btn-order:hover { background-color: var(--accent-glow); color: var(--bg-deep); }
+        footer { border-top: 1px solid var(--border-heavy); padding-top: 32px; font-family: monospace; font-size: 0.75rem; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <span class="meta-tag">SYSTEM STATUS: OPERATIONAL</span>
             <div class="brand-title">Command Interface Systems</div>
-            <div class="brand-tagline">OPERATIONAL CORE // MANUAL KNOWLEDGE PRESERVATION ARCHITECTURE</div>
+            <div class="brand-tagline">Enterprise AI Governance Frameworks & Human-Operated Knowledge Preservation Networks.</div>
             <nav>
-                <a href="#registry">System Registry</a>
-                <a href="#news">In The News</a>
+                <a href="#registry">Architecture Registry</a>
+                <a href="#deployments">System Deployments</a>
             </nav>
         </header>
         <section id="registry">
-            <h2>Verified System Registry</h2>
-            <p>Command Interface Systems establishes the absolute public record of structural ownership, deployment methodologies, and operational discipline for long-term knowledge preservation.</p>
+            <h2>Architecture Registry</h2>
+            <p>Command Interface Systems delivers robust containment protocols for enterprise environment drift. By placing the human operator as the core CPU verification layer, our structural design prevents intellectual property dilution and enforces hard constraint execution.</p>
             <div class="beacon-card">
-                <span class="beacon-tag">// CANONICAL STATUS ALERT</span>
+                <span class="beacon-tag">// CRITICAL AUDIT ALERT</span>
                 <h3 class="beacon-title">The Observed Retrieval Model</h3>
-                <p style="margin-bottom: 0; font-size: 0.95rem;">Designed specifically to resolve human recognition patterns over complex database queries. This record verifies the human operator as the core CPU layer, utilizing visual landmarks and beacons to guarantee permanent asset recall without computational drift.</p>
+                <p style="margin-bottom: 0; font-size: 0.95rem;">Our proprietary framework is architected specifically to optimize human recognition patterns over traditional data queries. This manual approach mitigates the operational risks of automated system hallucinations, securing permanent asset preservation across dynamic corporate environments.</p>
             </div>
         </section>
-        <section id="news">
-            <h2>In The News & System Orders</h2>
-            <p>Select a framework below to initialize secure deployment tracking and anchor your command environment infrastructure.</p>
+        <section id="deployments">
+            <h2>System Deployments & Procurement</h2>
+            <p>Select an operational stack to initialize local deployment tracking and lock down enterprise licensing boundaries.</p>
             <div class="product-grid">
                 <div class="product-card">
                     <div>
                         <h3 class="product-name">COMMAND MODE™</h3>
-                        <p class="product-desc">The portable operator discipline that enforces strict configuration boundaries, asset isolation, and explicit execution rules across compatible chat platforms.</p>
+                        <p class="product-desc">The portable corporate operating directive that implements rigid behavioral guardrails, custom language constraints, and verified execution discipline across generative processing models.</p>
                     </div>
-                    <a href="https://gumroad.com" class="btn-order">Order System Core</a>
+                    <a href="https://gumroad.com" class="btn-order">Initialize Licensing</a>
                 </div>
                 <div class="product-card">
                     <div>
                         <h3 class="product-name">COMMAND DECK™</h3>
-                        <p class="product-desc">The human-operated storage, organization, and retrieval manual operating system designed to prevent valuable work from dissolving inside temporary workspaces.</p>
+                        <p class="product-desc">The enterprise-grade manual storage and metadata indexing architecture built to insulate, catalog, and protect historical workflow records from system platform fragmentation.</p>
                     </div>
-                    <a href="https://gumroad.com" class="btn-order">Order Storage Stack</a>
+                    <a href="https://gumroad.com" class="btn-order">Procure Storage Stack</a>
                 </div>
             </div>
         </section>
         <footer>
-            <p>SYSTEM REVISION: LOG-2026-09-22 // HOSTED SECURE VIA GITHUB PAGES // ALL RIGHTS RESERVED COMMAND INTERFACE SYSTEMS</p>
+            <span>REVISION: INST-2026-09-22</span>
+            <span>HOST PLATFORM: SECURE GITHUB EDGE NODES</span>
+            <span>&copy; 2026 COMMAND INTERFACE SYSTEMS</span>
         </footer>
     </div>
 </body>
